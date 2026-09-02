@@ -2,11 +2,13 @@ import { PageHero } from "@/components/PageHero";
 import { HouseCard } from "@/components/HouseCard";
 import { divisionLore, divisions } from "@/data/divisions";
 import { houseBySlug } from "@/data/houses";
+import { CouncilEasterEgg } from "@/components/CouncilEasterEgg";
+import Image from "next/image";
 
 export const metadata = { title: "The Ten Houses" };
 
 export default function HousesPage() {
-  return <div className="page-wrap"><PageHero eyebrow="The Council of the 907" title="The Ten Houses" intro="Ten banners. Two ancient divisions. An unreasonable quantity of documented grievance." />
+  return <div className="page-wrap houses-commune"><div className="commune-foyer"><PageHero eyebrow="The Council of the 907" title="The House Commune" intro="Ten banners. Two ancient divisions. An unreasonable quantity of documented grievance." /><div className="commune-fresco commune-fresco--west" aria-hidden="true"><Image src="/artifacts/fuck-teske.jpg" alt="" fill sizes="220px"/></div><div className="commune-fresco commune-fresco--east" aria-hidden="true"><Image src="/artifacts/council-fresco-east.jpg" alt="" fill sizes="220px"/></div><CouncilEasterEgg/></div>
     <section className="lore-panel"><p>{divisionLore[0]}</p><strong>{divisionLore[2]}</strong></section>
     {divisions.map((division) => <section key={division.name} className="house-division"><div className="division-label"><span>Division</span><h2>{division.name}</h2><p>Five permanent seats</p></div><div>{division.houseSlugs.map((slug, i) => <HouseCard key={slug} house={houseBySlug(slug)!} index={i}/>)}</div></section>)}
   </div>;
