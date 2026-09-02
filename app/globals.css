@@ -103,6 +103,16 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 .house-hero__crest .house-art__image { object-fit:contain; }
 .house-dossier aside .dossier-banner { width:min(100%,260px); margin:0 auto 3rem; }
 .house-dossier aside .dossier-banner .house-art { background:transparent; }
+.house-relic-links button { width:100%; padding:.7rem 0; border:0; border-bottom:1px solid #ffffff1f; color:inherit; background:none; display:flex; align-items:baseline; justify-content:space-between; gap:1rem; text-align:left; font:inherit; cursor:pointer; }
+.house-relic-links button span { color:var(--house-c); font:600 .45rem var(--font-body); letter-spacing:.12em; text-transform:uppercase; white-space:nowrap; }
+.relic-lightbox { position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:clamp(1rem,4vw,3rem); background:#050707ed; backdrop-filter:blur(12px); }
+.relic-lightbox figure { width:min(900px,92vw); margin:0; }
+.relic-lightbox__image { position:relative; width:100%; aspect-ratio:1; background:#0d100f; box-shadow:0 30px 100px #000; }
+.relic-lightbox__image img { object-fit:contain; }
+.relic-lightbox figcaption { display:flex; justify-content:space-between; align-items:baseline; gap:2rem; padding:1.2rem 0; border-top:1px solid #b9965a80; }
+.relic-lightbox figcaption span { color:#8c928e; text-transform:uppercase; letter-spacing:.15em; font-size:.52rem; }
+.relic-lightbox figcaption strong { font:500 clamp(1.4rem,3vw,2.3rem) var(--font-display); }
+.relic-lightbox__close { position:fixed; top:1.2rem; right:1.5rem; z-index:1; width:46px; height:46px; border:1px solid #ffffff50; color:#fff; background:#090b0a; font:300 2rem/1 var(--font-body); cursor:pointer; }
 .relic-glyph--belt { width:260px; height:180px; border-radius:0; border:0; position:relative; overflow:hidden; }
 .relic-glyph--belt img { object-fit:cover; }
 .relic-dossiers article:has(.relic-glyph--belt) { grid-template-columns:280px 1fr; }
@@ -114,6 +124,7 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
   .house-hero__veil { background:linear-gradient(0deg,#070909f2 0,#080a09b8 62%,#0709095e); }
   .house-hero__crest { position:absolute; right:-1.5rem; bottom:2rem; width:190px; opacity:.45; }
   .house-dossier aside .dossier-banner { width:200px; }
+  .relic-lightbox figcaption { align-items:flex-start; flex-direction:column-reverse; gap:.4rem; }
   .relic-dossiers article:has(.relic-glyph--belt) { grid-template-columns:1fr; }
   .relic-glyph--belt { width:100%; height:auto; aspect-ratio:16/10; }
 }
