@@ -69,10 +69,10 @@ export const houses: House[] = [
   },
   {
     slug: "fagerstrom", name: "HOUSE FAGERSTROM", owner: "Ryan Fagerstrom", division: "Daisey’s", banner: "black HILL state",
-    subtitle: "HOUSE OF THE MISSING", seat: "The Empty War Room", primaryTitle: "THE ABSENT GENERAL", titles: ["Veteran of the Field", "Lord of the Empty War Room"],
-    motto: "A GREAT WARRIOR DOES NOT ALWAYS A GREAT GENERAL MAKE.", saying: "HE APPEARS. HE SPEAKS. HE VANISHES.", colors: ["#161616", "#c19a3b", "#57534b"], sigil: "helmet", relics: ["THE EMPTY CHAIR"],
-    character: "A formidable player in his youth who discovered that understanding the battlefield does not necessarily translate to managing a fantasy army.",
-    lore: ["House Fagerstrom remains remarkably committed to the middle. Some years he drafts. Some years the machine drafts. Once, the other Lords assembled his army for him.", "Most weeks the War Room stands empty. Then the Absent General returns, offers an observation or unnecessary joke, and disappears again."], chronicle: "THE DRAFT WITHOUT A LORD",
+    subtitle: "House of AFK", seat: "The Empty War Room", primaryTitle: "General of the Assigned Army", titles: [],
+    motto: "A great warrior does not always a great general make.", saying: "He Appears. He Speaks. He Vanishes.", colors: ["#161616", "#c19a3b", "#57534b"], sigil: "helmet", relics: ["The Empty Throne"],
+    character: "A commander with real football knowledge whose fantasy leadership remains inconsistent because he is often absent.",
+    lore: ["The real football background is the setup. The absentee fantasy management is the punchline. Some years he drafts. Some years the machine drafts. Once, the other Lords assembled his army for him.", "His army waits prepared around the vacant command throne, a phone resting on its arm. The General could be involved. He usually is not."], chronicle: "THE DRAFT WITHOUT A LORD",
   },
 ];
 
