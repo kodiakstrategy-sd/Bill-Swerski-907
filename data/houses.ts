@@ -14,8 +14,8 @@ export const houses: House[] = [
     slug: "sycks", name: "HOUSE SYCKS", owner: "Adam Sycks", division: "Daisey’s", banner: "Anchorage Aces",
     subtitle: "House of the Ledger", seat: "The Counting House", primaryTitle: "Master of Coin", titles: ["Auditor of Everything"],
     motto: "THE NUMBERS NEVER LIE.", saying: "LOVER OF COIN. HATER OF FUN.", colors: ["#17372b", "#687276", "#b69552"], sigil: "scales", relics: ["The Ledger"],
-    character: "An accountant, perennial competitor and exacting trader who rarely accepts an offer unless the arithmetic bends decisively toward his House.",
-    lore: ["In Las Vegas, a band remembered as the Purse Raiders made off with his wallet. The Realm preserved the episode as comedy, not danger."], chronicle: "THE LAS VEGAS PURSE RAIDERS",
+    character: "Lord Sycks presides over the Counting House with the patience of an accountant and the instincts of a merchant who has already calculated what everyone else is worth.",
+    lore: ["He is a perennial contender because he wastes little and gives away less. Every trade is measured, every offer audited and every imbalance noted.", "Though his shrewdness is the talk of every tavern, the results engraved beside his name cannot be ignored. Yet even the Ledger’s perfect columns could not prevent the Las Vegas Purse Raiders from taking his wallet."], chronicle: "THE LAS VEGAS PURSE RAIDERS",
   },
   {
     slug: "keys", name: "HOUSE KEYS", owner: "CJ Keys", division: "Daisey’s", banner: "Arby’s, We Have The…",
@@ -42,16 +42,16 @@ export const houses: House[] = [
   {
     slug: "teske", name: "HOUSE TESKE", owner: "Daniel Teske", division: "Jackie’s", banner: "Salmon Bellies",
     subtitle: "House of Douglas", seat: "Douglas Island", primaryTitle: "Master of Douglas", titles: ["Keeper of the Old Ways", "The Silent Mariner"],
-    motto: "THE OLD WAYS ENDURE.", colors: ["#12243b", "#3f6962", "#77756e"], sigil: "vessel", relics: ["The Ancient Draft Magazine", "The Flip Phone"],
-    character: "The league’s eldest member, drafting by old magazine, speaking rarely in the Council thread and keeping the old ways from Douglas Island.",
-    lore: ["His boat failed on the very day it was meant to carry the league fishing during a draft trip. The Broken Voyage has never been forgiven."], chronicle: "THE BROKEN VOYAGE", easterEgg: "F— Teske, reads one forbidden marginal note.",
+    motto: "THE OLD WAYS ENDURE.", colors: ["#12243b", "#3f6962", "#77756e"], sigil: "vessel", relics: ["The Ancient Draft Manuscript", "The Flip Phone"],
+    character: "The league’s eldest member, Lord Teske keeps the ancient manuscripts and guards the remembered history of the Ten Lords from Douglas Island.",
+    lore: ["He first arrived at the founding table carrying a printed draft manuscript, following its counsel as though it were sacred text.", "His boat failed on the very day it was meant to carry the league fishing during a draft trip. The Broken Voyage has never been forgiven."], chronicle: "THE BROKEN VOYAGE", easterEgg: "F— Teske, reads one forbidden marginal note.",
   },
   {
     slug: "ealy", name: "HOUSE EALY", owner: "Stephen Ealy", division: "Jackie’s", banner: "Kaaron Rodgers",
     subtitle: "House of Nine Lives", seat: "The Last Call", primaryTitle: "The Wildcard", titles: ["The Fool King", "Lord of the Last Call", "2025 League Champion"],
     motto: "ANYTHING CAN HAPPEN.", colors: ["#3b3229", "#b08c53", "#7d302d"], sigil: "cat", relics: ["The Crooked Crown"],
     character: "Class clown, willing reveler and human variable. House Ealy may touch the Sacred Sausage, spend a life, and return wearing the Crown.",
-    lore: ["Nine lives are alleged. No auditor has successfully counted them. In 2025, one of those lives ended in a championship."], chronicle: "THE CROWN & THE SAUSAGE",
+    lore: ["Nine lives are alleged. No auditor has successfully counted them. In 2025, one of those lives ended in a championship.", "Even his championship reign left the beloved belt carrying the unmistakable scent of sausage. Which sausage, the Council has wisely chosen never to ask."], chronicle: "THE CROWN & THE SAUSAGE",
   },
   {
     slug: "mahar", name: "HOUSE mahaR", owner: "Corey Mahar", division: "Daisey’s", banner: "Cook’n the Books",
@@ -69,10 +69,10 @@ export const houses: House[] = [
   },
   {
     slug: "fagerstrom", name: "HOUSE FAGERSTROM", owner: "Ryan Fagerstrom", division: "Daisey’s", banner: "black HILL state",
-    subtitle: "House of AFK", seat: "The Empty War Room", primaryTitle: "General of the Assigned Army", titles: ["Lord of AFK"],
-    motto: "A great warrior does not always a great general make.", saying: "He Appears. He Speaks. He Vanishes.", colors: ["#161616", "#c19a3b", "#57534b"], sigil: "helmet", relics: ["The Empty Throne"],
-    character: "As the most battle-tested warrior among the Ten, Lord Fagerstrom’s rise to Swerski glory once seemed inevitable. Yet the taverns soon learned an old truth: “A great warrior does not always a great general make.”",
-    lore: ["Now known as the Lord of AFK and General of the Assigned Army, his Swerski legacy is defined less by defeat than by absence. Some years he drafts. Some years the machine drafts. Once, the other Lords simply assembled his army for him.", "The banners are raised. The army stands ready. The throne sits empty."], chronicle: "THE DRAFT WITHOUT A LORD",
+    subtitle: "House of AFK", seat: "The Empty War Room", primaryTitle: "General of the Assigned Army", titles: [],
+    motto: "A GREAT WARRIOR DOES NOT ALWAYS A GREAT GENERAL MAKE.", saying: "HE APPEARS. HE SPEAKS. HE VANISHES.", colors: ["#161616", "#c19a3b", "#57534b"], sigil: "helmet", relics: ["THE EMPTY THRONE"],
+    character: "A commander with real football knowledge whose fantasy leadership remains inconsistent because he is often absent.",
+    lore: ["The real football background is the setup. The absentee fantasy management is the punchline. Some years he drafts. Some years the machine drafts. Once, the other Lords assembled his army for him.", "His army waits prepared around the vacant command throne, a phone resting on its arm. The General could be involved. He usually is not."], chronicle: "THE DRAFT WITHOUT A LORD",
   },
 ];
 
