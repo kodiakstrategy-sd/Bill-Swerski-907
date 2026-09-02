@@ -84,6 +84,17 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 .houses-commune { background:#0c100f; color:var(--bone); }
 .houses-commune .page-hero { min-height:72vh; display:flex; flex-direction:column; justify-content:end; background:linear-gradient(0deg,#0c100f 0,transparent 48%),url('/world/great-hall.webp') center 32%/cover; }
 .houses-commune .page-hero .lede { color:#c7c1b5; }
+.commune-foyer { position:relative; }
+.council-seal { position:absolute; z-index:3; right:clamp(1.3rem,5vw,5rem); bottom:clamp(1.5rem,4vw,3.5rem); width:96px; aspect-ratio:1; border:3px solid #6d512c; border-radius:50%; color:#21170b; background:radial-gradient(circle at 38% 30%,#d3a65d 0,#9a6d34 22%,#68431f 58%,#2b1b0e 100%); box-shadow:0 11px 18px #000b,0 0 24px #d59a4352,inset 0 0 0 4px #24170d,inset 0 0 0 7px #bd8b48,inset 0 -9px 13px #1c100bd1,inset 0 6px 8px #f0c17670; cursor:pointer; transition:transform .16s,filter .16s,box-shadow .16s; }
+.council-seal::before { content:""; position:absolute; inset:14px; border:1px solid #25180d99; border-radius:50%; box-shadow:inset 0 0 0 2px #d5a25438; }
+.council-seal:hover { transform:translateY(-3px); filter:brightness(1.12); box-shadow:0 14px 22px #000c,0 0 30px #e7aa4d70,inset 0 0 0 4px #24170d,inset 0 0 0 7px #bd8b48,inset 0 -9px 13px #1c100bd1,inset 0 6px 8px #f0c17670; }
+.council-seal:active { transform:translateY(3px) scale(.98); box-shadow:0 4px 8px #000c,0 0 15px #d59a4345,inset 0 7px 13px #160d09,inset 0 0 0 4px #24170d,inset 0 0 0 7px #8a602f; }
+.council-seal__rune { display:block; position:relative; font:700 1.25rem var(--font-display); letter-spacing:.08em; text-shadow:0 1px #d9aa61; }
+.council-seal__instruction { display:block; position:relative; margin-top:.2rem; font:700 .38rem var(--font-body); letter-spacing:.18em; text-transform:uppercase; }
+.council-reveal { position:fixed; inset:0; z-index:120; display:grid; place-items:center; padding:clamp(1rem,4vw,3rem); background:#030504f2; backdrop-filter:blur(9px); }
+.council-reveal__frame { width:min(1320px,92vw); border:clamp(6px,1vw,12px) solid #292d2b; outline:1px solid #777066; box-shadow:0 35px 110px #000; background:#0b0d0c; }
+.council-reveal__frame img { display:block; width:100%; height:auto; }
+.council-reveal__close { position:fixed; top:1.25rem; right:1.5rem; width:48px; height:48px; border:1px solid #827b70; color:#d8d1c4; background:#111412; font:300 2rem/1 var(--font-body); cursor:pointer; }
 .houses-commune .lore-panel { color:#c8c4ba; }
 .houses-commune .lore-panel strong { color:#b99559; }
 .houses-commune .house-division { max-width:1440px; border-color:#ffffff1b; }
@@ -119,6 +130,10 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 
 @media (max-width:760px) {
   .houses-commune .page-hero { min-height:68vh; }
+  .council-seal { width:76px; right:1rem; bottom:1rem; }
+  .council-seal__rune { font-size:.95rem; }
+  .council-reveal { padding:3.5rem .75rem 1rem; }
+  .council-reveal__frame { width:96vw; }
   .houses-commune .house-row { grid-template-columns:25px 64px 1fr 18px; }
   .houses-commune .house-row .house-art { width:58px; }
   .house-hero__veil { background:linear-gradient(0deg,#070909f2 0,#080a09b8 62%,#0709095e); }
