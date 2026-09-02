@@ -15,6 +15,8 @@ const relicImages: Record<string, string> = {
   "The Arcane Banner": "/house-relics/arcane-banner.webp",
   "The Divided Shield": "/house-relics/divided-shield.webp",
   "The Empty Throne": "/houses/fagerstrom/hero.webp",
+  "The Exalted Charlatan": "/house-relics/exalted-charlatan.webp",
+  "Baron Chin": "/house-relics/baron-chin.webp",
 };
 
 export function RelicGallery({ relics, houseName }: { relics: string[]; houseName: string }) {

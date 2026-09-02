@@ -5,7 +5,7 @@ export const houses: House[] = [
     slug: "galvin", name: "HOUSE GALVIN", owner: "Blake Galvin", division: "Jackie’s",
     banner: "Premature Edraftulati…", subtitle: "House of the Midway North", seat: "Juneau, by way of Chicago",
     primaryTitle: "The Whisperer of Rules", titles: ["Commissioner of the 907", "Keeper of the Bylaws", "Warden of the Waiver Wire"],
-    motto: "CHAOS IS A LADDER.", colors: ["#101a2d", "#a34f28", "#d8ceb8"], sigil: "bear", relics: ["The Shifting Rulebook"],
+    motto: "CHAOS IS A LADDER.", colors: ["#101a2d", "#a34f28", "#d8ceb8"], sigil: "bear", relics: ["The Shifting Rulebook", "Baron Chin"],
     character: "Founder, commissioner, Chicago native and Bears loyalist. He modifies the laws with suspicious frequency, claims impartiality and awaits the Council’s belief.",
     lore: ["The pages of the Shifting Rulebook have an uncanny tendency to change as circumstances require.", "The Whisperer of Rules has never been quite the same since Baron Chin—his brother and old co-conspirator—departed the Council. Some say he lost a brother. Others say he lost his most reliable trading partner. The tale is Council mythology, not an allegation."],
     chronicle: "THE FALL OF BARON CHIN",
@@ -21,8 +21,8 @@ export const houses: House[] = [
     slug: "keys", name: "HOUSE KEYS", owner: "CJ Keys", division: "Daisey’s", banner: "Arby’s, We Have The…",
     subtitle: "House of the Stag", seat: "The Green Court", primaryTitle: "Protector of the Crown", titles: ["The King’s Hand", "Keeper of the Crown"],
     motto: "THE CROWN MUST ENDURE.", saying: "ALWAYS THE HAND OF THE KING. NEVER THE KING.", colors: ["#173829", "#a25d3c", "#826a47"], sigil: "stag", relics: ["The Crown"],
-    character: "A beloved former athlete, consistently competitive and frequently within reach of glory—yet still without the Crown.",
-    lore: ["The noble stag keeps watch over a Crown forever close and forever just beyond reach."], chronicle: "THE CURSE OF THE KING’S HAND",
+    character: "A consistent competitor and frequently within reach of glory—yet still without the Crown.",
+    lore: ["Like the noble stag without a mate, he keeps watch over a Crown forever close and forever just beyond reach."], chronicle: "THE CURSE OF THE KING’S HAND",
   },
   {
     slug: "katasse", name: "HOUSE KATASSE", owner: "Angelo Katasse", division: "Jackie’s", banner: "Damm Daniels, Back…",
@@ -35,8 +35,8 @@ export const houses: House[] = [
     slug: "sanbei", name: "HOUSE SANBEI", owner: "Justin Sanbei", division: "Daisey’s", banner: "Duuuuuvaaaaal",
     subtitle: "HOUSE OF THE MOUNTAIN RUNNERS", seat: "The High Pass", primaryTitle: "The Beast", titles: ["Keeper of the High Pass", "Royal Physician"],
     motto: "JUDGE NOT A MOUNTAIN BY ITS SHADOW.", colors: ["#555b59", "#e5e5dc", "#17372d"], sigil: "mountain", relics: ["The High-Pass Staff"],
-    character: "A dentist known as The Beast since high-school football, when roughly one hundred pounds of athlete acquired a name far larger than himself.",
-    lore: ["A small mountain goat stands confidently over an enormous summit. The proportions are the point."], chronicle: "THE NAMING OF THE BEAST",
+    character: "From the highest passes came Lord Sanbei, the slight warrior whose courage always cast the greater shadow. Long before he kept the health of the Realm, the football fields named him The Beast—and the mountains accepted the title as truth.",
+    lore: ["He climbed where larger men faltered, carrying the High-Pass Staff through snow, wind and seasons of doubt. At the summit stands the mountain goat: small against the range, immovable before it. Thus House Sanbei teaches that legends are measured not by the size of the warrior, but by the height of the ground he conquers."], chronicle: "THE NAMING OF THE BEAST",
     disputedTitle: { title: "LICKER OF STRIPPERS", note: "No credible evidence exists that Lord Sanbei ever committed the act from which the title derives. This has done nothing to prevent its continued use by the Council." },
   },
   {
@@ -63,16 +63,16 @@ export const houses: House[] = [
   {
     slug: "richey", name: "HOUSE RICHEY", owner: "Naash Richey", division: "Jackie’s", banner: "4 Da(jon) Luv of dag…",
     subtitle: "House of Two Banners", seat: "The Divided Coast", primaryTitle: "Lord of Two Banners", titles: ["The Contrarian"],
-    motto: "WHY CHOOSE A SIDE?", saying: "LOYAL TO BOTH. TRUSTED BY NEITHER.", colors: ["#122640", "#73ba43", "#a5232f"], sigil: "two-banners", relics: ["The Divided Shield"],
+    motto: "WHY CHOOSE A SIDE?", saying: "LOYAL TO BOTH. TRUSTED BY NEITHER.", colors: ["#122640", "#73ba43", "#a5232f"], sigil: "two-banners", relics: ["The Divided Shield", "The Exalted Charlatan"],
     character: "A vocal newer Lord and enthusiastic contrarian, sworn somehow to both Seattle and San Francisco despite the small matter of their rivalry.",
     lore: ["Storm and ocean contest one half of the shield; crimson sun and golden towers claim the other. Neither half appears pleased."], chronicle: "THE TWO BANNERS", easterEgg: "PICK A TEAM.",
   },
   {
     slug: "fagerstrom", name: "HOUSE FAGERSTROM", owner: "Ryan Fagerstrom", division: "Daisey’s", banner: "black HILL state",
-    subtitle: "House of AFK", seat: "The Empty War Room", primaryTitle: "General of the Assigned Army", titles: [],
+    subtitle: "House of AFK", seat: "The Empty War Room", primaryTitle: "General of the Assigned Army", titles: ["Lord of AFK"],
     motto: "A great warrior does not always a great general make.", saying: "He Appears. He Speaks. He Vanishes.", colors: ["#161616", "#c19a3b", "#57534b"], sigil: "helmet", relics: ["The Empty Throne"],
-    character: "A commander with real football knowledge whose fantasy leadership remains inconsistent because he is often absent.",
-    lore: ["The real football background is the setup. The absentee fantasy management is the punchline. Some years he drafts. Some years the machine drafts. Once, the other Lords assembled his army for him.", "His army waits prepared around the vacant command throne, a phone resting on its arm. The General could be involved. He usually is not."], chronicle: "THE DRAFT WITHOUT A LORD",
+    character: "As the most battle-tested warrior among the Ten, Lord Fagerstrom’s rise to Swerski glory once seemed inevitable. Yet the taverns soon learned an old truth: “A great warrior does not always a great general make.”",
+    lore: ["Now known as the Lord of AFK and General of the Assigned Army, his Swerski legacy is defined less by defeat than by absence. Some years he drafts. Some years the machine drafts. Once, the other Lords simply assembled his army for him.", "The banners are raised. The army stands ready. The throne sits empty."], chronicle: "THE DRAFT WITHOUT A LORD",
   },
 ];
 
