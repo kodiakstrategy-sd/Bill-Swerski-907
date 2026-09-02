@@ -80,6 +80,44 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } }
 
+/* House Commune and House Entry: approved physical heraldry */
+.houses-commune { background:#0c100f; color:var(--bone); }
+.houses-commune .page-hero { min-height:72vh; display:flex; flex-direction:column; justify-content:end; background:linear-gradient(0deg,#0c100f 0,transparent 48%),url('/world/great-hall.webp') center 32%/cover; }
+.houses-commune .page-hero .lede { color:#c7c1b5; }
+.houses-commune .lore-panel { color:#c8c4ba; }
+.houses-commune .lore-panel strong { color:#b99559; }
+.houses-commune .house-division { max-width:1440px; border-color:#ffffff1b; }
+.houses-commune .division-label p,.houses-commune .house-row__main small { color:#858c87; }
+.houses-commune .house-row { min-height:150px; grid-template-columns:35px 94px 1fr 30px; border-color:#ffffff1a; }
+.houses-commune .house-row .house-art { width:82px; aspect-ratio:4/5; background:transparent; }
+.houses-commune .house-row .house-art__image { object-fit:contain; }
+.houses-commune .house-row__main .eyebrow { color:#9e8762; }
+.houses-commune .house-row__main strong { color:#eee6d7; font-size:2rem; }
+
+.house-hero>.house-art--hero { position:absolute; inset:0; width:100%; height:100%; aspect-ratio:auto; }
+.house-hero>.house-art--hero .house-art__image { object-fit:cover; }
+.house-hero__veil { position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,#070909ed 0,#080a09bd 35%,transparent 72%),linear-gradient(0deg,#080a09df 0,transparent 45%,#07090969); }
+.house-hero__copy { position:relative; z-index:2; }
+.house-hero__crest { position:relative; z-index:2; justify-self:end; width:min(28vw,360px); filter:drop-shadow(0 20px 28px #000b); }
+.house-hero__crest .house-art { background:transparent; }
+.house-hero__crest .house-art__image { object-fit:contain; }
+.house-dossier aside .dossier-banner { width:min(100%,260px); margin:0 auto 3rem; }
+.house-dossier aside .dossier-banner .house-art { background:transparent; }
+.relic-glyph--belt { width:260px; height:180px; border-radius:0; border:0; position:relative; overflow:hidden; }
+.relic-glyph--belt img { object-fit:cover; }
+.relic-dossiers article:has(.relic-glyph--belt) { grid-template-columns:280px 1fr; }
+
+@media (max-width:760px) {
+  .houses-commune .page-hero { min-height:68vh; }
+  .houses-commune .house-row { grid-template-columns:25px 64px 1fr 18px; }
+  .houses-commune .house-row .house-art { width:58px; }
+  .house-hero__veil { background:linear-gradient(0deg,#070909f2 0,#080a09b8 62%,#0709095e); }
+  .house-hero__crest { position:absolute; right:-1.5rem; bottom:2rem; width:190px; opacity:.45; }
+  .house-dossier aside .dossier-banner { width:200px; }
+  .relic-dossiers article:has(.relic-glyph--belt) { grid-template-columns:1fr; }
+  .relic-glyph--belt { width:100%; height:auto; aspect-ratio:16/10; }
+}
+
 /* Physical-art system: global navigation and homepage */
 .site-header { position:absolute; height:86px; padding:0 clamp(1.25rem,4vw,4rem); background:linear-gradient(#090c0bea,transparent); border-bottom:1px solid #d8d0bf2b; }
 .brand { gap:.8rem; align-items:center; letter-spacing:0; }
@@ -121,6 +159,9 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 .house-art--banner { aspect-ratio:3/5; clip-path:polygon(0 0,100% 0,100% 91%,50% 100%,0 91%); filter:drop-shadow(0 10px 8px #0008); }
 .house-art--crest { aspect-ratio:4/5; }.house-art--hero { aspect-ratio:16/9; }
 .house-art__image { object-fit:cover; }
+.house-art__inscription { position:absolute; z-index:2; left:8%; right:8%; bottom:9%; padding:.55rem .3rem; text-align:center; color:#eee5d3; background:#090b0ac7; border-top:1px solid #b7955d8a; border-bottom:1px solid #b7955d8a; text-shadow:0 2px 4px #000; }
+.house-art__inscription b { display:block; font:600 clamp(.48rem,1vw,.78rem)/1 var(--font-display); letter-spacing:.08em; text-transform:uppercase; }
+.house-art__inscription small { display:block; margin-top:.3rem; font:italic clamp(.34rem,.6vw,.52rem)/1.15 var(--font-display); color:#c8b894; }
 .house-art__fallback { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; color:var(--house-c); background:linear-gradient(90deg,#fff0,#ffffff0c 50%,#0002),repeating-linear-gradient(90deg,transparent 0 15px,#0000000b 16px 17px); border:1px solid #ffffff1f; }
 .house-art__fallback::after { content:""; position:absolute; inset:7px; border:1px solid color-mix(in srgb,var(--house-b) 55%,transparent); }
 .house-art__fallback .sigil { width:min(64%,72px); height:auto; aspect-ratio:1; padding:12px; z-index:1; }
@@ -129,6 +170,7 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 .hall-banner>span { display:flex; flex-direction:column; min-width:0; }
 .hall-banner b { font:500 clamp(.6rem,1vw,.9rem)/1.1 var(--font-display); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .hall-banner small { margin-top:.3rem; font-size:.43rem; text-transform:uppercase; letter-spacing:.08em; color:#8c928d; }
+.hall-banner .house-art__inscription small { display:none; }
 .hall-link { display:flex; width:max-content; gap:3rem; margin:6rem auto 0; padding:1rem 1.3rem; border:1px solid #b99b6754; text-transform:uppercase; letter-spacing:.15em; font-size:.58rem; }
 .reliquary { padding:9rem max(5vw,calc((100vw - 1420px)/2)); background:#151817; }
 .reliquary>header { display:grid; grid-template-columns:1.5fr 2fr; gap:6vw; margin-bottom:5rem; align-items:end; }.reliquary>header .eyebrow { grid-column:1/-1; }.reliquary>header h2 { font-size:clamp(3.7rem,7vw,7rem); line-height:.82; margin:0; }.reliquary>header>p:last-child { max-width:440px; font:1.35rem/1.5 var(--font-display); color:#9da19d; }
