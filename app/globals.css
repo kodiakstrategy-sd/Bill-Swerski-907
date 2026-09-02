@@ -126,6 +126,28 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 .relic-lightbox__close { position:fixed; top:1.2rem; right:1.5rem; z-index:1; width:46px; height:46px; border:1px solid #ffffff50; color:#fff; background:#090b0a; font:300 2rem/1 var(--font-body); cursor:pointer; }
 .relic-glyph--belt { width:260px; height:180px; border-radius:0; border:0; position:relative; overflow:hidden; }
 .relic-glyph--belt img { object-fit:cover; }
+.leather-scroll-page { background:radial-gradient(circle at 50% 20%,#34312b,#111513 62%); color:var(--bone); }
+.leather-scroll-page .page-hero { background:linear-gradient(0deg,#111513,transparent 55%),linear-gradient(120deg,#151b18,#313830); }
+.great-scroll-stage { --scroll-unroll:0; --scroll-height:0px; --scroll-bottom:32px; --scroll-turn:0deg; --scroll-travel:0px; height:520vh; position:relative; }
+.great-scroll__sticky { position:sticky; top:0; height:100vh; display:grid; place-items:center; padding:7rem 1rem 2rem; overflow:hidden; }
+.great-scroll__object { position:relative; width:min(760px,84vw); height:min(78vh,820px); filter:drop-shadow(0 35px 35px #000c); }
+.great-scroll__viewport { position:absolute; left:4%; right:4%; top:32px; height:var(--scroll-height); overflow:hidden; background:#6c4829; border-left:2px solid #2d1b10; border-right:2px solid #2d1b10; }
+.great-scroll__leather { min-height:100%; background:radial-gradient(ellipse at 35% 15%,#b18150 0,#8b5d35 36%,#654124 75%,#4a2c19 100%); box-shadow:inset 20px 0 32px #2b180e80,inset -20px 0 32px #2b180e80; position:relative; }
+.great-scroll__leather::before { content:""; position:absolute; inset:10px; border:2px double #3d2616; opacity:.65; pointer-events:none; }
+.great-scroll__leather::after { content:""; position:absolute; inset:0; opacity:.16; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.08' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode:multiply; }
+.great-scroll__inscription { padding:5rem clamp(2rem,7vw,6rem) 8rem; color:#24170e; transform:translateY(var(--scroll-travel)); will-change:transform; }
+.great-scroll__inscription .scroll-seal { top:2rem; right:2rem; border-color:#681f1b; color:#681f1b; }
+.great-scroll__inscription article { padding:2rem 0; border-bottom:1px solid #2c1a1066; }
+.great-scroll__inscription article>span { text-transform:uppercase; letter-spacing:.18em; font-size:.55rem; }
+.great-scroll__inscription h2 { margin:.45rem 0; font-size:clamp(1.55rem,4vw,2.5rem); }
+.great-scroll__inscription p { color:#4d301d; font-style:italic; }
+.great-scroll__roller { position:absolute; left:0; right:0; z-index:3; height:64px; display:grid; grid-template-columns:56px 1fr 56px; align-items:center; }
+.great-scroll__roller--top { top:0; }.great-scroll__roller--bottom { top:var(--scroll-bottom); transform:translateY(-32px) rotateX(var(--scroll-turn)); }
+.great-scroll__roller span { height:58px; border:3px solid #21150e; border-radius:45%; background:linear-gradient(#3a2113,#86542d 38%,#3b2114 58%,#160e0a); box-shadow:inset 0 0 0 5px #a47a454f,0 7px 12px #0009; }
+.great-scroll__roller i { display:block; height:35px; background:linear-gradient(90deg,#191c1b,#8b7650,#242725); clip-path:polygon(0 35%,65% 35%,100% 0,100% 100%,65% 65%,0 65%); }
+.great-scroll__roller i:last-child { transform:scaleX(-1); }
+.great-scroll__cue { position:absolute; bottom:1rem; color:#777f7a; text-transform:uppercase; letter-spacing:.18em; font-size:.48rem; }
+.leather-scroll-page .amendment-note { max-width:760px; color:#929891; }
 .relic-dossiers article:has(.relic-glyph--belt) { grid-template-columns:280px 1fr; }
 
 @media (max-width:760px) {
@@ -142,6 +164,11 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
   .relic-lightbox figcaption { align-items:flex-start; flex-direction:column-reverse; gap:.4rem; }
   .relic-dossiers article:has(.relic-glyph--belt) { grid-template-columns:1fr; }
   .relic-glyph--belt { width:100%; height:auto; aspect-ratio:16/10; }
+  .great-scroll-stage { height:560vh; }.great-scroll__sticky { padding:7rem .4rem 2.5rem; }.great-scroll__object { width:94vw; height:74vh; }.great-scroll__roller { grid-template-columns:32px 1fr 32px; }.great-scroll__inscription { padding:4rem 1.4rem 7rem; }.great-scroll__inscription .scroll-seal { width:48px; height:48px; top:1rem; right:1rem; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .great-scroll-stage { height:auto; padding:5rem 0; }.great-scroll__sticky { position:relative; height:auto; overflow:visible; }.great-scroll__object { height:auto; min-height:1200px; }.great-scroll__viewport { height:calc(100% - 64px); }.great-scroll__roller--bottom { top:auto; bottom:0; transform:translateY(32px); }.great-scroll__inscription { transform:none; }.great-scroll__cue { display:none; }
 }
 
 /* Physical-art system: global navigation and homepage */
