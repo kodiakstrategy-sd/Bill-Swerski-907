@@ -28,14 +28,33 @@ export const oracleReplies = [
 
 const normalize = (question: string) => question.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, "").replace(/\s+/g, " ").trim();
 
-export function getOracleReply(question: string, pendingQuestion: string | null, random = Math.random) {
+export const oracleOpening = "Approach, Lord. Ask of trades, the draft, the Crown, the Council’s laws, or the failings of another House. I am still deciphering the wisdom of this wretched league—a task made difficult by its scarcity. In time, my counsel may improve. Your judgment remains your own burden.";
+
+export type OracleMemory = { pendingQuestion: string | null; lastReply: number | null; frozenUsed: boolean };
+const general = [0, 1, 2, 3, 4, 5, 6, 12, 13, 15, 16, 18, 19, 20, 22];
+const topics = [
+  { pattern: /\b(trade|trades|trading|offer|offers|swap)\b/i, opening: "You seek counsel on an exchange of armies.", replies: [7, 9, 1] },
+  { pattern: /\b(rule|rules|law|laws|legal|illegal|commissioner|waiver|waivers)\b/i, opening: "You seek certainty in the laws of the Realm.", replies: [8, 3, 21] },
+  { pattern: /\b(draft|drafting|pick|picks|roster|lineup|start|sit)\b/i, opening: "You seek guidance in assembling your army.", replies: [0, 3, 6] },
+  { pattern: /\b(crown|win|wins|winning|champion|championship|glory)\b/i, opening: "You ask whether the Crown awaits you.", replies: [10, 0, 1] },
+];
+
+export function getOracleReply(question: string, memory: OracleMemory, random = Math.random) {
   const normalized = normalize(question);
-  if (pendingQuestion !== null && normalized === pendingQuestion) {
-    return { text: "I heard you the first time.", pendingQuestion: null };
+  if (memory.pendingQuestion !== null && normalized === memory.pendingQuestion) {
+    return { text: "I heard you the first time.", memory: { ...memory, pendingQuestion: null, lastReply: -1 } };
   }
-  const reply = oracleReplies[Math.floor(random() * oracleReplies.length)];
+  const namedHouse = houseNames.find((name) => new RegExp(`\\b${name}\\b`, "i").test(question));
+  const topic = topics.find(({ pattern }) => pattern.test(question));
+  const houseReply: Record<string, number> = { Galvin: 8, Sycks: 9, Keys: 10, Katasse: 7, Teske: 14 };
+  const specific = namedHouse && houseReply[namedHouse] !== undefined ? [houseReply[namedHouse], 1, 13] : general;
+  const candidates = [...(topic?.replies ?? specific), 17, ...(!memory.frozenUsed ? [11] : [])].filter((index) => index !== memory.lastReply);
+  const index = candidates[Math.floor(random() * candidates.length)];
+  const reply = oracleReplies[index];
+  const opening = topic?.opening ?? (namedHouse ? `You bring House ${namedHouse} before the Oracle.` : "Your petition has reached the chamber.");
+  const text = reply.includes("[HOUSE]") ? reply.replace("[HOUSE]", houseNames[Math.floor(random() * houseNames.length)]) : reply;
   return {
-    text: reply.includes("[HOUSE]") ? reply.replace("[HOUSE]", houseNames[Math.floor(random() * houseNames.length)]) : reply,
-    pendingQuestion: reply === "Speak your question once more." ? normalized : null,
+    text: [11, 15, 17].includes(index) ? text : `${opening} ${text}`,
+    memory: { pendingQuestion: index === 17 ? normalized : null, lastReply: index, frozenUsed: memory.frozenUsed || index === 11 },
   };
 }
