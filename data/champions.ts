@@ -13,6 +13,7 @@ export const champions: Champion[] = [
   { year: 2016, owner: "Daniel Teske", houseSlug: "teske" },
   { year: 2015, owner: "TJ" },
   { year: 2014, owner: "Angelo Katasse", houseSlug: "katasse" },
+  { year: 2013, owner: "Timothy “TJ” Jones" },
 ];
 
 export const oldRealm = [

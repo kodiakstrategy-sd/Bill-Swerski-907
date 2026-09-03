@@ -8,6 +8,7 @@ import { relics } from "@/data/relics";
 import { chronicles } from "@/data/chronicles";
 import { HouseArtwork } from "@/components/HouseArtwork";
 import { WorldArtwork } from "@/components/WorldArtwork";
+import { CampaignStandards } from "@/components/CampaignStandards";
 
 const relicArt: Record<string, string> = { crown: "/relics/crown.webp", sausage: "/relics/sacred-sausage.webp", scroll: "/relics/great-scroll.webp" };
 
@@ -31,10 +32,10 @@ export default function Home() {
 
     <section className="reliquary"><header><p className="eyebrow">Objects of consequence</p><h2>The Three Great Relics</h2><p>Victory, ruin, and the law that allegedly governs them both.</p></header><div className="relic-objects">{relics.map((relic, i) => <Link href={relic.slug === "scroll" ? "/scroll" : "/relics"} key={relic.slug} className="relic-object"><div className="relic-object__image"><Image src={relicArt[relic.slug]} alt={`${relic.name}, displayed as a physical northern relic`} fill sizes="(max-width: 760px) 100vw, 33vw"/></div><span className="object-index">0{i + 1}</span><div><p>{relic.meaning}</p><h3>{relic.name}</h3><small>{relic.description}</small></div></Link>)}</div></section>
 
-    <section className="succession-home"><div className="succession-home__title"><p className="eyebrow">The latest succession</p><h2>One Crown.<br/>Twelve campaigns.</h2><Link href="/champions" className="text-link">Read the full lineage ↗</Link></div><div className="succession-inscription">{champions.slice(0, 6).map((champion, i) => <div key={champion.year} className={i === 0 ? "is-current" : ""}><span>{champion.year}</span><strong>{champion.owner}</strong><small>{i === 0 ? "Reigning Champion" : "Inscribed"}</small></div>)}</div></section>
+    <section className="succession-home"><div className="succession-home__title"><p className="eyebrow">The latest succession</p><h2>One Crown.<br/>Thirteen campaigns.</h2><Link href="/champions" className="text-link">Read the full lineage ↗</Link></div><div className="succession-inscription">{champions.slice(0, 6).map((champion, i) => <div key={champion.year} className={i === 0 ? "is-current" : ""}><span>{champion.year}</span><strong>{champion.owner}</strong><small>{i === 0 ? "Reigning Champion" : "Inscribed"}</small></div>)}</div></section>
 
     <section className="physical-chronicles"><header><p className="eyebrow">Recovered testimony</p><h2>From the Chronicles</h2></header><div>{chronicles.slice(0, 4).map((item, i) => <Link href="/chronicles" key={item.slug}><span>{String(i + 1).padStart(2, "0")}</span><div><small>{item.era}</small><h3>{item.title}</h3><p>{item.summary}</p></div><b>Read ↗</b></Link>)}</div></section>
 
-    <section className="campaign-art"><WorldArtwork src="/world/campaign-2026.webp" alt="A northern campaign room overlooking ten distant standards above Juneau"/><div className="campaign-art__shade"/><div><p className="eyebrow">The next campaign · 2026</p><h2>The armies<br/>gather.</h2><p>Ten banners return to the North. The Crown waits. The Sausage also waits.</p><Link href="/season/2026" className="button">Enter the war room →</Link></div></section>
+    <section className="campaign-art"><WorldArtwork src="/world/campaign-2026.webp" alt="A northern campaign room overlooking ten House standards above Juneau"/><CampaignStandards/><div className="campaign-art__shade"/><div><p className="eyebrow">The next campaign · 2026</p><h2>The armies<br/>gather.</h2><p>Ten banners return to the North. The Crown waits. The Sausage also waits.</p><Link href="/season/2026" className="button">Enter the war room →</Link></div></section>
   </div>;
 }

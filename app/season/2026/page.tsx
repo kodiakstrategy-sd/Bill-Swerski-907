@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CampaignDraft } from "@/components/CampaignDraft";
+import { CampaignStandards } from "@/components/CampaignStandards";
 import draft from "@/data/draft2026.json";
 import { houseBySlug } from "@/data/houses";
 
@@ -25,7 +26,7 @@ function validateDraft() {
 export default function SeasonPage() {
   validateDraft();
   return <main className="campaign-page">
-    <section className="campaign-hero"><Image src="/world/campaign-2026.webp" alt="The 2026 campaign war table in the northern Realm" fill priority sizes="100vw"/><div className="campaign-hero__veil"/><div><p className="eyebrow">Bill Swerski 907 · Campaign 2026</p><h1>The Armies<br/><span>Are Chosen</span></h1><p>Ten Houses. Sixteen rounds. One hundred sixty selections inscribed upon the campaign ledger.</p></div></section>
+    <section className="campaign-hero"><Image src="/world/campaign-2026.webp" alt="The 2026 campaign war table beneath the standards of the Ten Houses" fill priority sizes="100vw"/><CampaignStandards/><div className="campaign-hero__veil"/><div><p className="eyebrow">Bill Swerski 907 · Campaign 2026</p><h1>The Armies<br/><span>Are Chosen</span></h1><p>Ten Houses. Sixteen rounds. One hundred sixty selections inscribed upon the campaign ledger.</p></div></section>
     <section className="order-battle"><header><p className="eyebrow">Order of Battle</p><h2>The Ten Draft Standards</h2></header><ol>{draft.draftOrder.map((entry) => { const house = houseBySlug(entry.houseSlug)!; return <li key={entry.slot}><span className="order-battle__slot">{String(entry.slot).padStart(2, "0")}</span><Image src={`/houses/${entry.houseSlug}/crest.webp`} alt="" width={84} height={105}/><div><Link href={`/houses/${entry.houseSlug}`}>{house.name}</Link><strong>{entry.owner}</strong><small>{entry.currentBanner} · {house.division}</small></div></li>; })}</ol></section>
     <CampaignDraft draftOrder={draft.draftOrder} picks={draft.picks}/>
     <section className="campaign-facts"><p className="eyebrow">Campaign record</p><h2>Facts of the Draft</h2><div><article><strong>160</strong><span>Selections</span></article><article><strong>16</strong><span>Rounds</span></article><article><strong>10</strong><span>Houses</span></article><article><strong>16</strong><span>Picks per House</span></article></div></section>
