@@ -273,3 +273,36 @@ h1,h2,h3 { font-family:var(--font-display),serif; font-weight:500; }
 @media (max-width:760px) {
   .campaign-hero { min-height:82svh; padding:10rem 1.2rem 4rem; }.campaign-hero h1 { font-size:4.5rem; }.campaign-hero>img { object-position:60% center; }.order-battle,.campaign-ledger,.campaign-facts { padding:5rem 1rem; }.order-battle header { display:block; }.order-battle ol { grid-template-columns:1fr; }.order-battle li { grid-template-columns:32px 54px 1fr; }.order-battle li img { width:48px; height:60px; }.pick-row { grid-template-columns:36px 34px 1fr; gap:.65rem; }.pick-row>a { grid-column:3; text-align:left; padding-bottom:.7rem; }.pick-row img { width:32px; height:40px; }.house-roster ol { grid-template-columns:1fr; }.campaign-facts>div { grid-template-columns:1fr 1fr; }.campaign-facts article:nth-child(2) { border-right:0; }.campaign-facts article:nth-child(-n+2) { border-bottom:1px solid #282b2752; }.draft-tabs { width:100%; }.draft-tabs button { flex:1; padding:.8rem .35rem; }
 }
+
+/* Phone-first finishing pass: preserve the physical world while making it easy to use by thumb. */
+@media (max-width:760px) {
+  html,body { max-width:100%; overflow-x:clip; }
+  .site-header nav { gap:.35rem; padding:.45rem .65rem; scroll-padding-inline:.65rem; }
+  .site-header nav a { min-height:44px; display:flex; align-items:center; padding:0 .55rem; }
+  .brand,.about-link,.back-link,.hall-link,.physical-chronicles>div>a,.house-row { min-height:44px; }
+  .about-link { min-width:44px; display:flex; align-items:center; justify-content:flex-end; }
+  .page-hero { padding-inline:1.2rem; }
+  .page-hero h1 { max-width:100%; font-size:clamp(3rem,15vw,3.8rem); overflow-wrap:anywhere; }
+  .houses-commune .house-division { width:100%; max-width:100%; padding-inline:1.2rem; overflow:hidden; }
+  .houses-commune .house-row { min-height:132px; grid-template-columns:22px 58px minmax(0,1fr) 18px; gap:.7rem; }
+  .houses-commune .house-row .house-art { width:56px; }
+  .houses-commune .house-row__main strong { font-size:clamp(1.25rem,7vw,1.65rem); line-height:.95; overflow-wrap:anywhere; }
+  .house-hero { min-height:calc(100svh - 105px); padding-inline:1.2rem; }
+  .house-hero h1 { max-width:100%; font-size:clamp(3rem,16vw,4.2rem); line-height:.78; overflow-wrap:anywhere; }
+  .house-facts { grid-template-columns:1fr; }
+  .house-facts>div,.house-facts>div:nth-child(2) { min-height:92px; padding:1.35rem 1.2rem; border-right:0; border-bottom:1px solid #ffffff1f; }
+  .house-facts>div:last-child { border-bottom:0; }
+  .physical-hero h1 { font-size:clamp(3.65rem,18vw,4.55rem); }
+  .realm-intro>div>p:last-child { font-size:clamp(1.85rem,9vw,2.3rem); }
+  .great-hall { min-height:auto; padding-block:5rem; }
+  .hall-banner { min-width:0; }
+  .hall-banner b { overflow-wrap:anywhere; }
+  .hall-link { width:100%; justify-content:space-between; gap:1rem; }
+  .physical-chronicles>div>a { padding-block:1.25rem; }
+  .campaign-hero h1 { max-width:100%; font-size:clamp(3.5rem,17vw,4.5rem); overflow-wrap:anywhere; }
+  .draft-tabs button,.round-filter button,.house-filter button { min-height:44px; }
+  .round-filter { scroll-snap-type:x proximity; }
+  .round-filter button,.house-filter button { scroll-snap-align:start; }
+  .draft-board-wrap { margin-inline:-1rem; padding-inline:1rem; scroll-snap-type:x proximity; }
+  .draft-board__column { scroll-snap-align:start; }
+}
